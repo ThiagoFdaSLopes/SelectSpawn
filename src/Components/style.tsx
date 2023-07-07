@@ -5,7 +5,7 @@ export const MainBG = styled.main`
     height: 67.5rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background-image: url('../src/Images/fireBG.png');
     background-repeat: no-repeat;
     overflow: hidden;
