@@ -13,6 +13,8 @@ export const MainBox = styled.div<PropsImgs>`
     background-position: right 14rem;
     overflow: hidden;
     display: flex;
+    border-right: 2px solid;
+	border-image: linear-gradient(to bottom, #181818, #eee, #181818) 1 100%;
 `;
 
 export const MainCardName = styled.section`
