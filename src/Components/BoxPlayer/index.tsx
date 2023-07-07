@@ -1,17 +1,27 @@
 import React from 'react';
 import { ButtonPlay, MainBox, MainCardName } from './style';
+import { listPlayers } from '../../Mocks/listImgs';
+
+type PropsPlayer = {
+  name: string,
+  indexSex: number,
+  sex: string,
+}
 
 
-const BoxPlayer: React.FC = () => {
+const BoxPlayer: React.FC<PropsPlayer> = ({ name, sex, indexSex }) => {
+  const randomIndex = Math.floor(Math.random() * listPlayers[indexSex].length)
   return (
-    <MainBox>
-        <MainCardName>
-          <p>Thiago Lopes</p>
-        </MainCardName>
-        <ButtonPlay>
+    <>   
+    <MainBox img={listPlayers[indexSex][randomIndex]}>
+      <MainCardName>
+          <p>{name}</p>
+      </MainCardName>
+      <ButtonPlay>
           Play
-        </ButtonPlay>
+      </ButtonPlay>
     </MainBox>
+    </>
   )
 }
 
