@@ -32,6 +32,7 @@ export const MainCardName = styled.section`
         transform: rotate(-90deg);
         font-size: 2.5rem;
         font-style: normal;
+        text-transform: uppercase;
         font-weight: 700;
         line-height: normal;
         color: #FFF;
@@ -50,8 +51,10 @@ export const ButtonPlay = styled.button`
     top: 55rem;
     z-index: 3;
     color: #FFF;
+    font-family: "Gilroy-Bold";
     font-size: 1.5rem;
     font-style: normal;
+    text-transform: uppercase;
     font-weight: 400;
     line-height: normal;
 `;
