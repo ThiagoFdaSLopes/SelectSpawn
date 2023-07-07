@@ -18,7 +18,7 @@ const BoxPlayer: React.FC<PropsPlayer> = ({ name, sex, indexSex }) => {
           <p>{name}</p>
       </MainCardName>
       <ButtonPlay>
-          Play
+          Escolher
       </ButtonPlay>
     </MainBox>
     </>
