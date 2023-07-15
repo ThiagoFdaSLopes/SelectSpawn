@@ -10,6 +10,7 @@ import { MainBG } from './style';
 // MockPlayerData Test
 import players from '../Mocks/players.json';
 import BoxNewPlayer from './BoxNewPlayer';
+import Player from '../interfaces/Player';
 
 // This will set the NUI to visible if we are
 // developing in browser
@@ -25,7 +26,7 @@ const App: React.FC = () => {
       <>
       <MainBG>
           {
-            players.length > 0 && players.map((player, index) => <BoxPlayer key={index + 1} name={player.fullname} sex={player.sex} indexSex={player.sex === "female" ? 0 : 1}/>)
+            players?.length > 0 && players?.map((player: Player, index) => <BoxPlayer key={index + 1} name={player.fullname} sex={player.sex} indexSex={player.sex === "female" ? 0 : 1}/>)
           }
           {
             players.length < 3 && <BoxNewPlayer />
