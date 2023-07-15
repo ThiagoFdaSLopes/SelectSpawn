@@ -63,14 +63,20 @@ export const ButtonPlay = styled.button`
     border-radius: 0.25rem;
     border: 1px solid #93fd30;
     background: linear-gradient(1deg, rgba(164, 253, 48, 0.44) 0%, rgba(123, 253, 48, 0.88) 100%);
+    transition: all 2.0 ease;
 
     color: #FFF;
-    position: absolute;
-    bottom: 8.5rem;
+    position: relative;
+    top: 13.4rem;
     font-family: "Gilroy-Bold";
     text-transform: uppercase;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  
+  &:hover {
+    background:  rgba(123, 253, 48, 0.88);
+    cursor: pointer;
+  }
 `;
