@@ -45,6 +45,7 @@ export const ButtonPlay = styled.button`
     border-radius: 0.25rem;
     border: 1px solid #FDD330;
     background: linear-gradient(1deg, rgba(253, 211, 48, 0.44) 0%, rgba(253, 211, 48, 0.88) 100%);
+    transition: all 2.0 ease;
     
     position: relative;
     left: 1rem;
@@ -57,6 +58,11 @@ export const ButtonPlay = styled.button`
     text-transform: uppercase;
     font-weight: 400;
     line-height: normal;
+
+    &:hover {
+        background:  rgba(253, 211, 48, 0.88);
+        cursor: pointer;
+    }
 `;
 
 // export const MainImage = styled.img<PropsImgs>`
