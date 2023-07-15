@@ -8,8 +8,11 @@ export const VisibilityCtx = createContext<VisibilityProviderValue | null>(null)
 export interface VisibilityProviderValue {
   setVisible: (visible: boolean) => void
   visible: boolean
-  showLogin: boolean
-  handleLoginOrRegister: () => void
+}
+
+export interface Player {
+  sex: string
+  fullname: string
 }
 
 // This should be mounted at the top level of your application, it is currently set to
@@ -17,15 +20,6 @@ export interface VisibilityProviderValue {
 export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const [visible, setVisible] = useState(false)
-  const [showLogin, setshowLogin] = useState(true)
-
-  const handleToogle = () => {
-    fetchNui('hideFrame').then((sucesso) => console.log(sucesso))
-  }
-
-  const handleLoginOrRegister = () => {
-    setshowLogin(!showLogin)
-  }
   
   useNuiEvent<boolean>('setVisible', setVisible)
 
@@ -50,9 +44,7 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     <VisibilityCtx.Provider
       value={{
         visible,
-        setVisible,
-        handleLoginOrRegister,
-        showLogin
+        setVisible
       }}
     >
     <div style={{ visibility: visible ? 'visible' : 'hidden', height: '100%'}}>
