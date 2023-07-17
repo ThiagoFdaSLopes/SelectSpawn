@@ -37,6 +37,25 @@ export const MainCardName = styled.section`
         line-height: normal;
         color: #FFF;
     }
+
+    div {
+        width: 5.875rem;
+        height: 5.875rem; 
+        fill: rgba(255, 255, 255, 0.20);
+        position: absolute;
+        top: 50px;
+    }
+
+    span {
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        color: #FFF;
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
 `;
 
 export const ButtonPlay = styled.button`
