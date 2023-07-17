@@ -8,8 +8,8 @@ import BoxPlayer from './BoxPlayer';
 import { MainBG } from './style';
 
 // MockPlayerData Test
-import players from '../Mocks/players.json';
 import BoxNewPlayer from './BoxNewPlayer';
+import { useVisibility } from '../providers/VisibilityProvider';
 import Player from '../interfaces/Player';
 
 // This will set the NUI to visible if we are
@@ -22,14 +22,16 @@ debugData([
 ])
 
 const App: React.FC = () => {
+
+  const { playersInfo } = useVisibility();
     return (
       <>
       <MainBG>
           {
-            players?.length > 0 && players?.map((player: Player, index) => <BoxPlayer key={index + 1} name={player.fullname} sex={player.sex} indexSex={player.sex === "female" ? 0 : 1}/>)
+            playersInfo?.length > 0 && playersInfo?.map((player: Player, index) => <BoxPlayer key={index + 1} name={player.Nome} sex={player.Sexo} blood={player.Blood} indexSex={player.Sexo === "F" ? 0 : 1}/>)
           }
           {
-            players.length < 3 && <BoxNewPlayer />
+            playersInfo.length < 3 && <BoxNewPlayer />
           }
       </MainBG>
       </>
