@@ -1,4 +1,10 @@
 export default interface Player {
-    sex: string
-    fullname: string
+    Banco: number
+    Nome: string
+    Barber: number[]
+    Blood: string
+    Passport: number
+    Sexo: string
+    Skin: string
+    Tattoos: []
 }
