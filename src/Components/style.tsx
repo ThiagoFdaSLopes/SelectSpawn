@@ -6,7 +6,7 @@ export const MainBG = styled.main`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-image: url('../src/Images/fireBG.png');
+    background-image: url('../src/Images/firebg.png');
     background-repeat: no-repeat;
     overflow: hidden;
 `;
