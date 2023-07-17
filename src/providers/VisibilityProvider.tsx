@@ -3,6 +3,7 @@ import {useNuiEvent} from "../hooks/useNuiEvent";
 import {fetchNui} from "../utils/fetchNui";
 import { isEnvBrowser } from "../utils/misc";
 import VisibilityProviderValue from "../interfaces/VisibilityProviderValue";
+import Player from "../interfaces/Player";
 
 export const VisibilityCtx = createContext<VisibilityProviderValue | null>(null)
 
@@ -11,11 +12,10 @@ export const VisibilityCtx = createContext<VisibilityProviderValue | null>(null)
 export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const [visible, setVisible] = useState(false)
+  const [playersInfo, setplayersInfo] = useState<Player[]>([])
   
-  useNuiEvent<boolean>('setVisible', setVisible)
-  useNuiEvent('Spawn', (data) => {
-    console.log(data)
-  })
+  useNuiEvent<boolean>('setVisible', setVisible);
+  useNuiEvent('Spawn', (data: Player[]) => setplayersInfo(data));
 
   // Handle pressing escape/backspace
   useEffect(() => {
@@ -38,7 +38,8 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     <VisibilityCtx.Provider
       value={{
         visible,
-        setVisible
+        setVisible,
+        playersInfo
       }}
     >
     <div style={{ visibility: visible ? 'visible' : 'hidden', height: '100%'}}>
