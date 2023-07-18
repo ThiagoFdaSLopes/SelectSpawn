@@ -11,6 +11,7 @@ import { MainBG } from './style';
 import BoxNewPlayer from './BoxNewPlayer';
 import { useVisibility } from '../providers/VisibilityProvider';
 import Player from '../interfaces/Player';
+import SelectSpawn from './SelectSpawn';
 
 // This will set the NUI to visible if we are
 // developing in browser
@@ -23,25 +24,29 @@ debugData([
 
 const App: React.FC = () => {
 
-  const { playersInfo } = useVisibility();
+  const { playersInfo, visibleSpawnSelect } = useVisibility();
     return (
       <>
-      <MainBG>
-          {
-            playersInfo?.length > 0 && playersInfo?.map((player: Player, index) =>
-            <BoxPlayer 
-              key={index} 
-              name={player.Nome} 
-              sex={player.Sexo} 
-              blood={player.Blood} 
-              indexSex={player.Sexo === "F" ? 0 : 1}
-              dataPlayer ={player}
-            />)
-          }
-          {
-            playersInfo.length < 3 && <BoxNewPlayer />
-          }
-      </MainBG>
+        {
+           !visibleSpawnSelect ?  ( 
+           <MainBG>
+                {
+                  playersInfo?.length > 0 && playersInfo?.map((player: Player, index) =>
+                  <BoxPlayer 
+                    key={index} 
+                    name={player.Nome} 
+                    sex={player.Sexo} 
+                    blood={player.Blood} 
+                    indexSex={player.Sexo === "F" ? 0 : 1}
+                    dataPlayer ={player}
+                  />)
+                }
+                {
+                  playersInfo.length < 3 && <BoxNewPlayer />
+                }
+            </MainBG>) : 
+            <SelectSpawn />
+        }
       </>
     )
 }
