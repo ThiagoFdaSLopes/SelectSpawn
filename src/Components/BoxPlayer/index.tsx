@@ -17,8 +17,11 @@ type PropsPlayer = {
 const BoxPlayer: React.FC<PropsPlayer> = ({ name, sex, indexSex, blood, dataPlayer }) => {
   const randomIndex = Math.floor(Math.random() * listPlayers[indexSex].length)
 
+  const { setVisibleSpawnSelect } = useVisibility();
+
   const choosenCharacter = () => {
     const data = { ...dataPlayer, "index": dataPlayer.Passport }
+    setVisibleSpawnSelect(true)
     fetchNui("Chosen", data);
   }
 
