@@ -9,8 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background: url('../src/Images/bg.png');
-        background-repeat: no-repeat;
+        /* background: url('../src/Images/bg.png'); */
+        /* background-repeat: no-repeat; */
         overflow: hidden;
     }
 `;
