@@ -12,6 +12,7 @@ export const VisibilityCtx = createContext<VisibilityProviderValue | null>(null)
 export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const [visible, setVisible] = useState(false)
+  const [visibleSpawnSelect, setVisibleSpawnSelect] = useState(false)
   const [playersInfo, setplayersInfo] = useState<Player[]>([])
   
   useNuiEvent<boolean>('setVisible', setVisible);
@@ -38,8 +39,10 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     <VisibilityCtx.Provider
       value={{
         visible,
+        visibleSpawnSelect,
+        playersInfo,
+        setVisibleSpawnSelect,
         setVisible,
-        playersInfo
       }}
     >
     <div style={{ visibility: visible ? 'visible' : 'hidden', height: '100%'}}>
