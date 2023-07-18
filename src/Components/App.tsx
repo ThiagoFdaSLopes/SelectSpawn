@@ -28,7 +28,15 @@ const App: React.FC = () => {
       <>
       <MainBG>
           {
-            playersInfo?.length > 0 && playersInfo?.map((player: Player, index) => <BoxPlayer key={index + 1} name={player.Nome} sex={player.Sexo} blood={player.Blood} indexSex={player.Sexo === "F" ? 0 : 1}/>)
+            playersInfo?.length > 0 && playersInfo?.map((player: Player, index) =>
+            <BoxPlayer 
+              key={index} 
+              name={player.Nome} 
+              sex={player.Sexo} 
+              blood={player.Blood} 
+              indexSex={player.Sexo === "F" ? 0 : 1}
+              dataPlayer ={player}
+            />)
           }
           {
             playersInfo.length < 3 && <BoxNewPlayer />
