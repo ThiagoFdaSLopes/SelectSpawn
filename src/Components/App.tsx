@@ -22,9 +22,12 @@ debugData([
   }
 ])
 
+// Mock Data Player
+// import playersInfo from '../Mocks/playersInfo.json';
+
 const App: React.FC = () => {
 
-  const { playersInfo, visibleSpawnSelect } = useVisibility();
+  const { visibleSpawnSelect, playersInfo } = useVisibility();
     return (
       <>
         {
@@ -38,7 +41,7 @@ const App: React.FC = () => {
                     sex={player.Sexo} 
                     blood={player.Blood} 
                     indexSex={player.Sexo === "F" ? 0 : 1}
-                    dataPlayer ={player}
+                    dataPlayer={player}
                   />)
                 }
                 {
