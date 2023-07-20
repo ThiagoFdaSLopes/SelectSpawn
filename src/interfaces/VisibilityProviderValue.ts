@@ -6,4 +6,6 @@ export default interface VisibilityProviderValue {
     visible: boolean
     visibleSpawnSelect: boolean
     playersInfo: Player[]
+    setplayerChose: (player: Player) => void
+    playerChose: Player | undefined
 }
