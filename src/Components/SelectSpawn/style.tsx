@@ -114,6 +114,7 @@ export const ButtonLastLocation = styled.button`
     border: 1px solid #FDD330;
     background: linear-gradient(1deg, rgba(253, 211, 48, 0.44) 0%, rgba(253, 211, 48, 0.88) 100%);
     transition: all 2.0 ease;
+    margin-left: 1rem;
 
     color: #FFF;
     font-family: "Gilroy-Bold";
@@ -149,4 +150,12 @@ export const ButtonSpawnar = styled.button`
         background:  rgba(123, 253, 48, 0.88);
         cursor: pointer;
     }
+`;
+
+export const SectionButtons = styled.div`
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
