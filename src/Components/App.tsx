@@ -31,7 +31,7 @@ const App: React.FC = () => {
     return (
       <>
         {
-           !visibleSpawnSelect ?  ( 
+           !visibleSpawnSelect &&  ( 
            <MainBG>
                 {
                   playersInfo?.length > 0 && playersInfo?.map((player: Player, index) =>
@@ -47,8 +47,10 @@ const App: React.FC = () => {
                 {
                   playersInfo.length < 3 && <BoxNewPlayer />
                 }
-            </MainBG>) : 
-            <SelectSpawn />
+            </MainBG>)
+        }
+        {
+          visibleSpawnSelect && <SelectSpawn />
         }
       </>
     )
