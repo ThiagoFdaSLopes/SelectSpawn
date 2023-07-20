@@ -14,9 +14,11 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   const [visible, setVisible] = useState(false)
   const [visibleSpawnSelect, setVisibleSpawnSelect] = useState(false)
   const [playersInfo, setplayersInfo] = useState<Player[]>([])
+  const [playerChose, setplayerChose] = useState<Player | undefined>()
   
   useNuiEvent<boolean>('setVisible', setVisible);
   useNuiEvent('Spawn', (data: Player[]) => setplayersInfo(data));
+  useNuiEvent('Location', setVisibleSpawnSelect)
 
   // Handle pressing escape/backspace
   useEffect(() => {
@@ -41,8 +43,10 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         visible,
         visibleSpawnSelect,
         playersInfo,
+        playerChose,
         setVisibleSpawnSelect,
         setVisible,
+        setplayerChose
       }}
     >
     <div style={{ visibility: visible ? 'visible' : 'hidden', height: '100%'}}>
