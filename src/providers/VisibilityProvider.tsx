@@ -18,7 +18,10 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   
   useNuiEvent<boolean>('setVisible', setVisible);
   useNuiEvent('Spawn', (data: Player[]) => setplayersInfo(data));
-  useNuiEvent('Location', setVisibleSpawnSelect)
+  useNuiEvent('Location', (data) => {
+    setVisible(data)
+    setVisibleSpawnSelect(data)
+  })
 
   // Handle pressing escape/backspace
   useEffect(() => {
