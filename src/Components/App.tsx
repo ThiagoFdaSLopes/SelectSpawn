@@ -27,30 +27,33 @@ debugData([
 
 const App: React.FC = () => {
 
-  const { visibleSpawnSelect, playersInfo } = useVisibility();
+  const { visibleSpawnSelect, playersInfo, visibleCreator, visiblePlayerList } = useVisibility();
     return (
       <>
         {
-           !visibleSpawnSelect &&  ( 
-           <MainBG>
-                {
-                  playersInfo?.length > 0 && playersInfo?.map((player: Player, index) =>
-                  <BoxPlayer 
-                    key={index} 
-                    name={player.Nome} 
-                    sex={player.Sexo} 
-                    blood={player.Blood} 
-                    indexSex={player.Sexo === "F" ? 0 : 1}
-                    dataPlayer={player}
-                  />)
-                }
-                {
-                  playersInfo.length < 3 && <BoxNewPlayer />
-                }
-            </MainBG>)
+          visiblePlayerList && 
+          <MainBG>
+            {
+              playersInfo?.length > 0 && playersInfo?.map((player: Player, index) =>
+              <BoxPlayer 
+                key={index} 
+                name={player.Nome} 
+                sex={player.Sexo} 
+                blood={player.Blood} 
+                indexSex={player.Sexo === "F" ? 0 : 1}
+                dataPlayer={player}
+              />)
+            }
+            {
+              playersInfo.length < 3 && <BoxNewPlayer />
+            }
+          </MainBG>
         }
         {
           visibleSpawnSelect && <SelectSpawn />
+        }
+        {
+          visibleCreator && <div>Oi</div>
         }
       </>
     )
