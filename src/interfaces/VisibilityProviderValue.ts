@@ -2,6 +2,8 @@ import Player from "./Player"
 
 export default interface VisibilityProviderValue {
     setVisible: (visible: boolean) => void
+    visiblePlayerList: boolean
+    visibleCreator: boolean
     setVisibleSpawnSelect: (visibleSpawnSelect: boolean) => void
     visible: boolean
     visibleSpawnSelect: boolean
