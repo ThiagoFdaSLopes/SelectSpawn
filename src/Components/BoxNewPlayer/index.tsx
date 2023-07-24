@@ -1,6 +1,5 @@
 import React from 'react';
 import { ButtonPlay, MainBox, MainCardInfoNewPlayer, SpaceFree, SpaceFreeContent } from './style';
-import { useVisibility } from '../../providers/VisibilityProvider';
 import { fetchNui } from '../../utils/fetchNui';
 
 const BoxNewPlayer: React.FC = () => {
