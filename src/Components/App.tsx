@@ -12,12 +12,17 @@ import BoxNewPlayer from './BoxNewPlayer';
 import { useVisibility } from '../providers/VisibilityProvider';
 import Player from '../interfaces/Player';
 import SelectSpawn from './SelectSpawn';
+import Creator from './Creator';
 
 // This will set the NUI to visible if we are
 // developing in browser
 debugData([
   {
     action: 'setVisible',
+    data: true,
+  },
+  {
+    action: 'VisibleCreator',
     data: true,
   }
 ])
@@ -53,7 +58,7 @@ const App: React.FC = () => {
           visibleSpawnSelect && <SelectSpawn />
         }
         {
-          visibleCreator && <div>Oi</div>
+          visibleCreator && <Creator />
         }
       </>
     )
