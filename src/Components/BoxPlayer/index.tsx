@@ -20,8 +20,8 @@ const BoxPlayer: React.FC<PropsPlayer> = ({ name, sex, indexSex, blood, dataPlay
   const { setplayerChose } = useVisibility();
 
   const choosenCharacter = () => {
-    fetchNui("CharacterChosen", dataPlayer)
     setplayerChose(dataPlayer)
+    fetchNui("CharacterChosen", dataPlayer)
   }
 
   return (
