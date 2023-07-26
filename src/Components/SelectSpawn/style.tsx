@@ -17,7 +17,11 @@ export const Section = styled.section`
     align-items: center;
 `;
 
-export const MainBox = styled.div`
+type Props = {
+    active: boolean
+}
+
+export const MainBox = styled.div<Props>`
     width: 30rem;
     height: 50rem;
     background: rgba(20, 20, 20, 0.84);
@@ -28,6 +32,7 @@ export const MainBox = styled.div`
     justify-content: space-around;
     margin: 0px 10px 0px 10px;
     border-radius: 20px;
+    ${(props) => props.active && `border: 2px solid white;`}
 
     h1 {
         color: #ffffff;
