@@ -17,6 +17,8 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   const [visiblePlayerList, setVisiblePlayerList] = useState(false)
   const [playersInfo, setplayersInfo] = useState<Player[]>([])
   const [playerChose, setplayerChose] = useState<Player | undefined>()
+  const [first, setfirst] = useState("")
+  const [last, setlast] = useState("")
   
   useNuiEvent<boolean>('setVisible', setVisible);
   useNuiEvent<boolean>('SpawnLocation', setVisibleSpawnSelect);
@@ -50,9 +52,13 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         playerChose,
         visibleCreator,
         visiblePlayerList,
+        first,
+        last,
         setVisibleSpawnSelect,
         setVisible,
-        setplayerChose
+        setplayerChose,
+        setfirst,
+        setlast
       }}
     >
     <div style={{ visibility: visible ? 'visible' : 'hidden', height: '100%'}}>
