@@ -22,7 +22,7 @@ debugData([
     data: true,
   },
   {
-    action: 'VisibleCreator',
+    action: 'SpawnLocation',
     data: true,
   }
 ])
