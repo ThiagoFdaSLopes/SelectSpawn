@@ -5,7 +5,7 @@ import { fetchNui } from '../../utils/fetchNui';
 const BoxNewPlayer: React.FC = () => {
 
   const handleBoxCreator = () => {
-    fetchNui("OpenCreator")
+    fetchNui("OpenCreator", { Skin: "mp_f_freemode_01", Tattos: [], Barber: [], Clothes: []})
   }
 
   return (
