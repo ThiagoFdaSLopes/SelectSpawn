@@ -50,7 +50,7 @@ const App: React.FC = () => {
               />)
             }
             {
-              playersInfo.length < 3 && <BoxNewPlayer />
+              playersInfo.length < 1 && <BoxNewPlayer />
             }
           </MainBG>
         }
