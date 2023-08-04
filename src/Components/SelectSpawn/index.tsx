@@ -34,14 +34,14 @@ const SelectSpawn: React.FC = () => {
                 <img src={option.image} alt="location spawn" />
               </div>
               <div className='text'>{option.text}</div>
-              <button className='button' onClick={() => handleSelectSpawn(option.position, index + 1, )}>Select Spawn</button>
+              <button type="button" className='button' onClick={() => handleSelectSpawn(option.position, index + 1, )}>Select Spawn</button>
             </MainBox>
             )
           }
         </Section>
         <SectionButtons>
           {
-            selectSpawn &&<ButtonSpawnar onClick={handleSpawnar}>Spawnar</ButtonSpawnar>
+            selectSpawn &&<ButtonSpawnar type="button" onClick={handleSpawnar}>Spawnar</ButtonSpawnar>
           }
         </SectionButtons>
     </MainSelectSpawn>
