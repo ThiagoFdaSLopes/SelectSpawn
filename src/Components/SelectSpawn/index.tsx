@@ -5,16 +5,13 @@ import { fetchNui } from '../../utils/fetchNui';
 import { useVisibility } from '../../providers/VisibilityProvider';
 
 const SelectSpawn: React.FC = () => {
-  const { playerChose } = useVisibility()
   const [activeButton, setActiveButton] = useState(-10)
   const [selectSpawn, setselectSpawn] = useState(false)
-  const [selectPosition, setselectPosition] = useState("")
 
-  const handleSelectSpawn = (position: any, index: number) => {
+  const handleSelectSpawn = (index: number) => {
     setActiveButton(index - 1)
-    setselectSpawn(true)
-    setselectPosition(position)
-    const data = { index: index, selectPosition, playerChose }
+    setselectSpawn(!selectSpawn)
+    const data = { index: index }
     fetchNui("Chosen", data)
   }
 
@@ -34,7 +31,7 @@ const SelectSpawn: React.FC = () => {
                 <img src={option.image} alt="location spawn" />
               </div>
               <div className='text'>{option.text}</div>
-              <button type="button" className='button' onClick={() => handleSelectSpawn(option.position, index + 1, )}>Select Spawn</button>
+              <button type="button" className='button' onClick={() => handleSelectSpawn(index + 1)}>Select Spawn</button>
             </MainBox>
             )
           }
